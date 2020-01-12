@@ -16,16 +16,16 @@
 	<context:property-placeholder location="classpath:sport.properties"/>
 	
     <!-- Define your beans here -->
-    <bean id="myCoach"
-    	class="com.luv2code.springdemo.TrackCoach">
-    
-	    <!-- set up constructor injection -->
+    <bean id="myGolfCoach"
+    	class="com.luv2code.springdemo.GolfCoach">
+
+	<!-- set up constructor injection -->
 	    <constructor-arg ref="myFortuneService" />
     </bean>
     
     <!-- define the dependency -->
     <bean id="myFortuneService"
-    	class="com.luv2code.springdemo.HappyFortuneService">
+    	class="com.luv2code.springdemo.RandomFortuneService">
     </bean>
     
     <bean id="myCricketCoach"
