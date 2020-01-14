@@ -2,6 +2,7 @@ package com.luv2code.springAnnotation;
 
 import org.springframework.stereotype.Component;
 
+import javax.annotation.PostConstruct;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -12,7 +13,7 @@ public class FileFortuneService implements FortuneService {
 
     // private String fileName = "fortune-data.txt";
 
-    private String fileName = "fortune-data";
+    private String fileName = "fortune-data.txt";
     private List<String> theFortunes;
 
     // create a random number generator
@@ -23,6 +24,7 @@ public class FileFortuneService implements FortuneService {
         System.out.println(">> FileFortuneService: inside default constructor");
     }
 
+    @PostConstruct
     private void loadTheFortunesFile() {
 
         System.out.println(">> FileFortuneService: inside method loadTheFortuneFile");
