@@ -2,7 +2,11 @@ package com.luv2code.springAnnotation;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
+
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
 
 @Component
 public class TennisCoach implements Coach{
@@ -13,7 +17,7 @@ public class TennisCoach implements Coach{
 
     // set default constructor
     public TennisCoach(){
-        System.out.println(">> inside default constructor");
+        System.out.println(">> TennisCoach: inside default constructor");
     }
 /*
     @Autowired
@@ -35,6 +39,18 @@ public class TennisCoach implements Coach{
     }
 
  */
+
+    // define my init method
+    @PostConstruct
+    public void doMyStartUpStuff() {
+        System.out.println(">> TennisCoach: inside of doMyStartupStuff()");
+    }
+
+    // define my destroy method
+    @PreDestroy
+    public void doMYCleanupStuff() {
+        System.out.println(">> TennisCoach: inside of doMyCleanupStuff()");
+    }
 
 
     @Override

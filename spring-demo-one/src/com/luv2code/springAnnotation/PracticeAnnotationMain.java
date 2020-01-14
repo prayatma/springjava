@@ -8,9 +8,11 @@ public class PracticeAnnotationMain {
 
         ClassPathXmlApplicationContext practice = new ClassPathXmlApplicationContext("springAnnotation-applicationContext.xml");
 
-        Coach theCoach = practice.getBean("practice", Coach.class);
+        Coach theCoach = practice.getBean("pingPongCoach", Coach.class);
 
         System.out.println(theCoach.getDailyWorkout());
+
+        System.out.println(theCoach.getDailyFortune());
 
         practice.close();
 
